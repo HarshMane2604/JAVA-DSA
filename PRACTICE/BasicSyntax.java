@@ -175,3 +175,25 @@ import java.util.*;
 //         System.out.println(reverseNumber(n));
 //     }
 // }
+// COUNTING DIGITS
+public class Basic{
+    static int evenlyDivides(int n) {
+        // code here
+        int digit = 0;
+        int count = 0;
+        int original = n;
+        while(n > 0){
+            digit = n % 10;
+            int remainder = original % digit;
+            if(digit != 0 && remainder == 0){
+                count++;
+            }
+            n = n / 10;
+        }
+        return count;
+    }
+
+    public static void main(String[] args){
+        System.out.print(evenlyDivides(12));
+    }
+}
