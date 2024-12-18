@@ -175,25 +175,48 @@ import java.util.*;
 //         System.out.println(reverseNumber(n));
 //     }
 // }
-// COUNTING DIGITS
-public class Basic{
-    static int evenlyDivides(int n) {
-        // code here
-        int digit = 0;
-        int count = 0;
-        int original = n;
-        while(n > 0){
-            digit = n % 10;
-            int remainder = original % digit;
-            if(digit != 0 && remainder == 0){
-                count++;
-            }
-            n = n / 10;
-        }
-        return count;
-    }
 
-    public static void main(String[] args){
-        System.out.print(evenlyDivides(12));
+// COUNTING DIGITS
+// public class Basic{
+//     static int evenlyDivides(int n) {
+//         // code here
+//         int digit = 0;
+//         int count = 0;
+//         int original = n;
+//         while(n > 0){
+//             digit = n % 10;
+//             int remainder = original % digit;
+//             if(digit != 0 && remainder == 0){
+//                 count++;
+//             }
+//             n = n / 10;
+//         }
+//         return count;
+//     }
+
+//     public static void main(String[] args){
+//         System.out.print(evenlyDivides(12));
+//     }
+// }
+
+public class Basic {
+    public static int reverse(int x) {
+       int reversedDigit = 0;
+       while(x != 0){
+        int digit = x % 10;
+        x /= 10;
+        if(reversedDigit > Integer.MAX_VALUE / 10 || (reversedDigit > Integer.MAX_VALUE / 10 && digit > 7)){ // OVERFLOW CONDITION
+            return 0;
+        }
+        if(reversedDigit < Integer.MIN_VALUE / 10 || (reversedDigit < Integer.MIN_VALUE / 10 && digit < -8)){ // UNDERFLOW CONDITION
+            return 0;
+        }
+        reversedDigit = reversedDigit * 10 + digit;
+       }
+       return reversedDigit;
     }
+    public static void main(String[] args){
+            System.out.print(reverse(-90000));
+        }
+    
 }
