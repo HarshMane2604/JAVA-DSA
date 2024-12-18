@@ -199,24 +199,54 @@ import java.util.*;
 //     }
 // }
 
+// REVERSING AN INTEGER
+
+// public class Basic {
+//     public static int reverse(int x) {
+//        int reversedDigit = 0;
+//        while(x != 0){
+//         int digit = x % 10;
+//         x /= 10;
+//         if(reversedDigit > Integer.MAX_VALUE / 10 || (reversedDigit > Integer.MAX_VALUE / 10 && digit > 7)){ // OVERFLOW CONDITION
+//             return 0;
+//         }
+//         if(reversedDigit < Integer.MIN_VALUE / 10 || (reversedDigit < Integer.MIN_VALUE / 10 && digit < -8)){ // UNDERFLOW CONDITION
+//             return 0;
+//         }
+//         reversedDigit = reversedDigit * 10 + digit;
+//        }
+//        return reversedDigit;
+//     }
+//     public static void main(String[] args){
+//             System.out.print(reverse(-90000));
+//         }
+// }
+
+
+// PALINDROME
 public class Basic {
-    public static int reverse(int x) {
-       int reversedDigit = 0;
-       while(x != 0){
-        int digit = x % 10;
-        x /= 10;
-        if(reversedDigit > Integer.MAX_VALUE / 10 || (reversedDigit > Integer.MAX_VALUE / 10 && digit > 7)){ // OVERFLOW CONDITION
-            return 0;
+    public static boolean isPalindrome(int x) {
+        int reversedDigit = 0;
+        int original = x;
+        while(original != 0){
+            int digit = original % 10;
+            original /= 10;
+            if(reversedDigit > Integer.MAX_VALUE / 10 || (reversedDigit == Integer.MAX_VALUE / 10 && digit > 7)){
+                return false;
+            }
+            if(reversedDigit < Integer.MIN_VALUE / 10 || (reversedDigit == Integer.MIN_VALUE / 10 && digit < -8)){
+                return false;
+            }
+            
+            reversedDigit = reversedDigit*10 + digit;
         }
-        if(reversedDigit < Integer.MIN_VALUE / 10 || (reversedDigit < Integer.MIN_VALUE / 10 && digit < -8)){ // UNDERFLOW CONDITION
-            return 0;
+        if(reversedDigit == x){
+            return true;
+        }else{
+            return false;
         }
-        reversedDigit = reversedDigit * 10 + digit;
-       }
-       return reversedDigit;
     }
     public static void main(String[] args){
-            System.out.print(reverse(-90000));
+           System.out.print(isPalindrome(3333));
         }
-    
 }
