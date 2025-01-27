@@ -1,5 +1,5 @@
 package STRING;
-import java.util.*;
+//import java.util.*;
 public class StringConcatenation {
     public static void main(String[] args) {
         String firstName = "Harsh";
