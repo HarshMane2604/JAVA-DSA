@@ -1,9 +1,9 @@
-public class printing1toN{
+public class recursion1toN {
     static int cnt = 0;
         public static void print1toN(int N){
             
              // Base Condition.
-             if(cnt == 3 ) return;
+             if(cnt == N ) return;
              System.out.println(cnt);
     
              // Count incremented.
