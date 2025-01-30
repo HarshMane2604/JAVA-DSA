@@ -13,7 +13,8 @@ public class Armstrong{
             digit = a % 10;
             number += Math.pow(digit, count);
             a /= 10;
-        }
+        };
+        
 
         return number;
     }

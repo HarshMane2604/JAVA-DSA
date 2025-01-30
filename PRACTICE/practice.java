@@ -25,35 +25,55 @@
 // }
 
 // QUESTION TO CONVERT to CAMELCASE
-import java.util.*;
+// import java.util.*;
 
-import javax.swing.plaf.synth.SynthStyle;
+// import javax.swing.plaf.synth.SynthStyle;
 
-public class practice {
-    public static String camelCase(String str) {
-        StringBuilder sb = new StringBuilder("");
-        boolean capital = false;
-        for (char ch : str.toCharArray()) {
-            if (Character.isLetter(ch)) {
-                if (str.length() == 0) {
-                    sb.append(Character.toLowerCase(ch));
-                } else if (capital) {
-                    sb.append(Character.toUpperCase(ch));
-                } else {
-                    sb.append(Character.toLowerCase(ch));
-                }
-                capital = false;
-            }else{
-                capital = true;
-            }
+// public class practice {
+//     public static String camelCase(String str) {
+//         StringBuilder sb = new StringBuilder("");
+//         boolean capital = false;
+//         for (char ch : str.toCharArray()) {
+//             if (Character.isLetter(ch)) {
+//                 if (str.length() == 0) {
+//                     sb.append(Character.toLowerCase(ch));
+//                 } else if (capital) {
+//                     sb.append(Character.toUpperCase(ch));
+//                 } else {
+//                     sb.append(Character.toLowerCase(ch));
+//                 }
+//                 capital = false;
+//             }else{
+//                 capital = true;
+//             }
             
-        }
-        return sb.toString();
-    }
+//         }
+//         return sb.toString();
+//     }
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();
-        System.out.println(camelCase(str));
-    }
-}
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         String str = sc.nextLine();
+//         System.out.println(camelCase(str));
+//     }
+// }
+
+
+// QUESTION TO FIND THE COUNT OF CONSONANTS
+// import java.util.*;
+// public class practice {
+//     public static int countConsonants(String str){
+//         int  count = 0;
+//         for(char ch : str.toCharArray()){
+//             if(Character.isLetter(ch) && ch != 'a'  && ch != 'e' && ch != 'i' && ch != 'o' && ch != 'u'){
+//                 count++;
+//         }
+//     }
+//     return count;
+// }
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         String str = sc.nextLine();
+//         System.out.println(countConsonants(str));
+//     }
+// }
